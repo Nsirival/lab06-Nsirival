@@ -176,9 +176,12 @@ int sum(LinkedList *list)
   //  so does not need to do error checking for these conditions.
 
   assert(list != NULL);
-
+  int sum = 0;
+  for(Node*n = list-> head; n != nullptr; n = n->next){
+    sum += n-> data;
+  }
   // TODO: Insert code here to calculate and return
   //   sum of all values in list (0 if there are none).
 
-  return -42; // STUB!  Replace this line with correct code
+  return sum; // STUB!  Replace this line with correct code
 }
