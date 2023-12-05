@@ -41,14 +41,21 @@ void addIntToEndOfList(LinkedList *list, int value)
 void addIntToStartOfList(LinkedList *list, int value)
 {
   assert(list != NULL); // if list is NULL, we can do nothing.
-  
+
   // Add code for this.
   // HINT:
   // consider all edge cases such as when list->head is or is not null AND
   // consider all edge cases such as when list->tail is or is not null.
   // Visualizing the problem with a box and pointer diagram can help.
+  Node* new_node = new Node();
+  new_node->data = value;
+ 
+  // Make the new node point to the current head
+  new_node->next = (list->head);
+ 
+  // Update the head to point to the new node
+  list->head = new_node;
 }
-
 // list: ptr to a linked list of Node (each with int data, and Node * next)
 // Return a pointer to node with the largest value.
 // You may assume list has at least one element
