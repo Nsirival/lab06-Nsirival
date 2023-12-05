@@ -1,6 +1,8 @@
 #include <cassert>
 #include "linkedList.h"
 #include "linkedListFuncs.h"
+#include <iostream>
+using namespace std;
 
 void addIntToEndOfList(LinkedList *list, int value)
 {
@@ -57,6 +59,7 @@ void addIntToStartOfList(LinkedList *list, int value)
     // Update the head to point to the new node
     list->head = new_node;
 }
+
 // list: ptr to a linked list of Node (each with int data, and Node * next)
 // Return a pointer to node with the largest value.
 // You may assume list has at least one element
@@ -74,7 +77,7 @@ Node *pointerToMax(LinkedList *list)
   Node*temp = list->head;
   for(Node * n = list->head; n != nullptr; n = n-> next){
     if(n->data > temp->data){
-      temp->data = n->data;
+      temp = n;
     }
   }
   // TODO: Insert code here to calculate and return
@@ -84,8 +87,6 @@ Node *pointerToMax(LinkedList *list)
   // TODO: Insert code here to calculate and return
   //   value of pointer to max element (first one if ties.)
   
-
-  return NULL; // STUB!  Replace this line with correct code
 }
 
 // list: ptr to a linked list of Node (each with int data, and Node * next)
@@ -106,7 +107,7 @@ Node *pointerToMin(LinkedList *list)
   Node*temp = list->head;
   for(Node * n = list->head; n != nullptr; n = n-> next){
     if(n->data < temp->data){
-      temp->data = n->data;
+      temp = n;
     }
   }
   // TODO: Insert code here to calculate and return
