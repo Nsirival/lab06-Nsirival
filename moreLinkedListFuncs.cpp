@@ -71,7 +71,7 @@ Node *pointerToMax(LinkedList *list)
   //  so does not need to do error checking for these conditions.
   assert(list != NULL);
   assert(list->head != NULL);
-
+  
   // TODO: Insert code here to calculate and return
   //   value of pointer to max element (first one if ties.)
 
@@ -114,11 +114,16 @@ int largestValue(LinkedList *list)
 
   assert(list != NULL);
   assert(list->head != NULL);
-
+  int max = -32767;
+  for(Node * n = list->head; n != nullptr; n = n-> next){
+    if(n->data > max){
+      max = n-> data;
+    }
+  }
   // TODO: Insert code here to calculate and return
   //   largest value in list (which may not be unique).
 
-  return -42; // STUB!  Replace this line with correct code
+  return max; // STUB!  Replace this line with correct code
 }
 
 // list: ptr to a linked list of Node (each with int data, and Node * next)
@@ -133,11 +138,16 @@ int smallestValue(LinkedList *list)
 
   assert(list != NULL);
   assert(list->head != NULL);
-
+  int min = -32767;
+  for(Node * n = list->head; n != nullptr; n = n-> next){
+    if(n->data < min){
+      min = n-> data;
+    }
+  }
   // TODO: Insert code here to calculate and return
-  //   smallest value in list (which may not be unique).
+  //   largest value in list (which may not be unique).
 
-  return -42; // STUB!  Replace this line with correct code
+  return min; // STUB!  Replace this line with correct code
 }
 
 // list: ptr to a linked list of Node (each with int data, and Node * next)
