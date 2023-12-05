@@ -10,7 +10,7 @@ void addIntToEndOfList(LinkedList *list, int value)
 
   // TODO:
   // (1) Allocate a new node.  p will point to it.
-  Node * p = new Node;
+  p = new Node;
 
   // (2) Set p's data field to the value passed in
   p->data = value;
