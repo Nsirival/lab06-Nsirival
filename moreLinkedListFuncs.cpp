@@ -2,41 +2,42 @@
 #include "linkedList.h"
 #include "linkedListFuncs.h"
 
-// void addIntToEndOfList(LinkedList *list, int value)
-// {
-//   assert(list != NULL); // if list is NULL, we can do nothing.
+void addIntToEndOfList(LinkedList *list, int value)
+{
+  assert(list != NULL); // if list is NULL, we can do nothing.
 
-//   Node *p; // temporary pointer
+  Node *p; // temporary pointer
 
-//   // TODO:
-//   // (1) Allocate a new node.  p will point to it.
-//   p = new Node;
+  // TODO:
+  // (1) Allocate a new node.  p will point to it.
+  p = new Node;
 
-//   // (2) Set p's data field to the value passed in
-//   p->data = value;
-//   // (3) Set p's next field to NULL
-//   p-> next = NULL;
-//   if (list->head == NULL)
-//   {
+  // (2) Set p's data field to the value passed in
+  p->data = value;
+  // (3) Set p's next field to NULL
+  p-> next = NULL;
+  if (list->head == NULL)
+  {
 
-//     // (4) Make both head and tail of this list point to p
-//     list -> head = p;
-//     list -> tail = p;
-//   }
-//   else
-//   {
+    // (4) Make both head and tail of this list point to p
+    list -> head = p;
+    list -> tail = p;
+  }
+  else
+  {
 
-//     // Add p at the end of the list.
-//     Node * current = head;
-//     while(current -> next != nullptr){
-//       current = current -> next;
-//     }
-//     // (5) The current node at the tail? Make it point to p instead of NULL
-//     current-> next = p;
+    // Add p at the end of the list.
+    Node * current = list->head;
+    while(current -> next != nullptr){
+      current = current -> next;
+    }
+    // (5) The current node at the tail? Make it point to p instead of NULL
+    current-> next = p;
     
-//     // (6) Make the tail of the list be p now.
-//   }
-// }
+    // (6) Make the tail of the list be p now.
+    list->tail = p;
+  }
+}
 
 void addIntToStartOfList(LinkedList *list, int value)
 {
@@ -48,13 +49,13 @@ void addIntToStartOfList(LinkedList *list, int value)
   // consider all edge cases such as when list->tail is or is not null.
   // Visualizing the problem with a box and pointer diagram can help.
   Node* new_node = new Node();
-  new_node->data = value;
+    new_node->data = value;
  
-  // Make the new node point to the current head
-  new_node->next = (list->head);
+    // Make the new node point to the current head
+    new_node->next = (list->head);
  
-  // Update the head to point to the new node
-  list->head = new_node;
+    // Update the head to point to the new node
+    list->head = new_node;
 }
 // list: ptr to a linked list of Node (each with int data, and Node * next)
 // Return a pointer to node with the largest value.
