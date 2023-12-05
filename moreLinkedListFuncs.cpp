@@ -138,7 +138,7 @@ int smallestValue(LinkedList *list)
 
   assert(list != NULL);
   assert(list->head != NULL);
-  int min = -32767;
+  int min = 32767;
   for(Node * n = list->head; n != nullptr; n = n-> next){
     if(n->data < min){
       min = n-> data;
